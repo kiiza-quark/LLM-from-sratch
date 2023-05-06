@@ -22,9 +22,9 @@ class Tokenizer:
         for c in all_symbols:
             self.__add_to_dict(c)
         # Add space and punctuation to the dictionary
-        self.__add_to_dict('.')
-        self.__add_to_dict(' ')
-        self.__add_to_dict(':')
+        # self.__add_to_dict('.')
+        # self.__add_to_dict(' ')
+        # self.__add_to_dict(':')
 
     def __add_to_dict(self, character):
         if character not in self.dictionary:
@@ -42,3 +42,8 @@ class Tokenizer:
     
     def size(self):
         return len(self.dictionary)
+    
+
+
+tokenizer = Tokenizer()
+print(tokenizer.size()) #103
