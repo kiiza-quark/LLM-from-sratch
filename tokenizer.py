@@ -11,7 +11,16 @@ class Tokenizer:
             self.__add_to_dict(str(i))
         for i in range(26):
             self.__add_to_dict(chr(ord('a') + i))
+
+        special_characters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '[', ']', '{', '}', '|', '\\', ';', ':', '\'',
+                                '\"', ',', '.', '<', '>', '/', '?', '`', '~']
+        mathematical_symbols = ['+', '-', '*', '/', '=', '<', '>', '≠', '≈', '≡', '≤', '≥', '√', 'π', '∞']
+        capital_letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+                            'V', 'W', 'X', 'Y', 'Z']
+        all_symbols = special_characters + mathematical_symbols + capital_letters
         
+        for c in all_symbols:
+            self.__add_to_dict(c)
         # Add space and punctuation to the dictionary
         self.__add_to_dict('.')
         self.__add_to_dict(' ')
